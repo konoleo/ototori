@@ -1,0 +1,47 @@
+@import "tag";
+
+#inputDiv {
+	width: 100vw;
+	height: calc(100vh - 120px);
+	margin-top: 120px;
+	text-align: center;
+	label {
+		// buttonを継承
+		background: rgb(185, 185, 185);
+		text-align: center;
+		padding: 20px 18px;
+		border-radius: 6px;
+	}
+}
+
+#pianorollParent {
+	overflow: hidden;
+	position: relative;
+	#pianoroll {
+		position: relative;
+		overflow: hidden;
+		height: 300px;
+		margin-left: min(200px, 30vw);
+	}
+	#singBorder {
+		position: absolute;
+		top: 0;
+		left: min(200px, 30vw);
+		width: 3px;
+		height: 100%;
+		background: #000;
+		border: none;
+	}
+}
+
+.note {
+	position: absolute;
+	background: #000;
+	height: 7px;
+	&.hide {
+		display: none;
+	}
+	&.voice {
+		background: red;
+	}
+}

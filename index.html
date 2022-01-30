@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="utf-8">
+	<title>音取り</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<script src="https://unpkg.com/picoaudio/dist/browser/PicoAudio.js" defer></script>
+	<!-- <script src="voice.js" defer></script>
+	<script src="midi.js" defer></script> -->
+	<script src="script.js" defer></script>
+	<link rel="stylesheet" media="all" href="index.min.css">
+</head>
+<body>
+	<div id="inputDiv">
+		<h2>MIDIファイルをアップロードしてください</h2>
+		<label>
+			ファイルを選択
+			<input type="file" id="inputMidi" class="hidden" accept="audio/midi">
+		</label>
+	</div>
+	<main hidden>
+		<div id="pianorollParent">
+			<div id="piano"></div>
+			<div id="pianoroll"></div>
+			<hr id="singBorder">
+		</div>
+		<button id="controler" data-playing="false" data-first>再生</button>
+		<button onclick="location.reload()">別の曲を練習する</button>
+	</main>
+</body>
+</html>

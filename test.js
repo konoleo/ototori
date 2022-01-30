@@ -1,52 +1,56 @@
-// (async function () {
-// 	// const midijson = await fetch("alps.json").then(r => r.ok ? r.json() : Promise.reject(new Error(`${r.url}にアクセスできません。`)));
-// // 	const audioCtx = new AudioContext();
-// // 	// マイクから音声を取得する
-// // 	const stream = await navigator.mediaDevices.getUserMedia({audio: true});
-// // 	const input = audioCtx.createMediaStreamSource(stream);
-// // 	// 音声の解析を行うAnalyserNodeを作成する
-// // 	const analyser = audioCtx.createAnalyser();
-// // 	analyser.fftSize = 2048;
-// // 	// マイクからの入力をAnalyserNodeに繋げる
-// // 	input.connect(analyser);
-// 	const microphone = await navigator.mediaDevices.getUserMedia({audio: true});
-// 	const audioCtx = new AudioContext();
-// 	const analyser = audioCtx.createAnalyser();
-// 	analyser.fftSize = 2048;
-// 	const input = audioCtx.createMediaStreamSource(microphone);
-// 	input.connect(analyser);
-// 	const bufferLength = analyser.frequencyBinCount;
-// 	const frequency = new Uint8Array(bufferLength);
-// 	analyser.getByteFrequencyData(frequency);
-// 	console.log(frequency);
-
-// 	mediaStreamSource = audioContext.createMediaStreamSource(stream)
-// 	meter = createAudioMeter(audioContext)
-// 	mediaStreamSource.connect(meter)
-// }());
-
-navigator.mediaDevices.getUserMedia({audio: true}).then((stream) => {
-	const audioCtx = new AudioContext();
-	const analyser = audioCtx.createAnalyser();
-	analyser.fftSize = 2048;
-	analyser.smoothingTimeConstant = 0.8;
-	const input = audioCtx.createMediaStreamSource(stream);
-	input.connect(analyser);
-	const javascriptNode = audioCtx.createScriptProcessor(2048, 1, 1);
-	analyser.connect(javascriptNode);
-	javascriptNode.connect(audioCtx.destination);
-	console.log(audioCtx.sampleRate);
-	javascriptNode.addEventListener("audioprocess", () => {
-		const frequencyData = new Uint8Array(analyser.frequencyBinCount);
-		analyser.getByteFrequencyData(frequencyData);
-		let values = 0;
-		const length = frequencyData.length;
-		for (var i = 0; i < length; i++) {
-			values += (frequencyData[i]);
-		}
-		var average = values / length;
-		if (Math.round(average) > 10) {
-			console.log(Math.round(average));
-		}
+function getClosestElem(num, arr) {
+	num = Number(num);
+	return arr.reduce((prev, curr) => {
+		return (Math.abs(curr - num) < Math.abs(prev - num) ? curr : prev);
 	});
-});
+}
+
+const notes = document.getElementById("notes");
+
+(async function () {
+	const freqList = await fetch("freqList.json").then(r => r.ok ? r.json() : Promise.reject(new Error(`${r.url}にアクセスできません。`)));
+
+	window.addEventListener("click", () => {
+		navigator.mediaDevices.getUserMedia({audio: true}).then((stream) => {
+			const audioCtx = new AudioContext({sampleRate: 44100});
+			const analyser = audioCtx.createAnalyser();
+			analyser.fftSize = 16384;
+			const input = audioCtx.createMediaStreamSource(stream);
+			input.connect(analyser);
+			const frequencyData = new Uint8Array(analyser.frequencyBinCount);
+			const javascriptNode = audioCtx.createScriptProcessor(2048);
+			analyser.connect(javascriptNode);
+			javascriptNode.connect(audioCtx.destination);
+			const unit = audioCtx.sampleRate / analyser.fftSize;
+			javascriptNode.addEventListener("audioprocess", () => {
+				analyser.getByteFrequencyData(frequencyData);
+				const maxValue = Math.max(...frequencyData);
+				const index = frequencyData.indexOf(maxValue);
+				if (maxValue > 200 && index !== 0) {
+					const hz = Math.round(index * unit);
+					document.getElementById("freq").style.left = hz + "px";
+					var closestHz = getClosestElem(hz, Object.keys(freqList));
+					var soundData = freqList[closestHz];
+				} else {
+					document.getElementById("freq").style.left = 0 + "px";
+					var soundData = {
+						japanese: "休み",
+						international: "rest"
+					};
+				}
+				const newestNote = notes.querySelector(":scope > .note:last-of-type");
+				if (!newestNote || newestNote.getAttribute("data-international") !== soundData.international) {
+					const newNote = document.createElement("div");
+					newNote.classList.add("note");
+					newNote.textContent = `${soundData.japanese} (${closestHz || soundData.international})`;
+					newNote.setAttribute("data-international", soundData.international);
+					newNote.style.width = 0;
+					notes.appendChild(newNote);
+				} else {
+					newestNote.style.width = Number(newestNote.style.width.replace("px", "")) + 0.5 + "px";
+					console.log(newestNote.style.width);
+				}
+			});
+		});
+	});
+}());

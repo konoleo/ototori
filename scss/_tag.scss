@@ -1,0 +1,23 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	overflow: hidden;
+	padding: 0;
+	clip: rect(0, 0, 0, 0);
+}
+
+button {
+	background: rgb(185, 185, 185);
+	text-align: center;
+	padding: 20px 18px;
+	border: none;
+	border-radius: 6px;
+}

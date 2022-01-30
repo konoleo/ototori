@@ -2,11 +2,30 @@
 <html lang="ja" prefix="og: http://ogp.me/ns#">
 <head>
 	<meta charset="utf-8">
-	<title>カラオケ</title>
+	<title>音取り</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<script src="test.js" defer></script>
 </head>
 <body>
-	<audio id="audio" autoplay="autoplay"></audio>
-	<canvas id="frequency"></canvas>
-	<canvas id="timedomain"></canvas>
+	<div id="notes"></div>
+	<div id="freq"></div>
 </body>
+<style>
+	#notes {
+		background: repeating-linear-gradient(90deg, white, white 99px, black 99px, black 100px);
+	}
+	.note {
+		background: #ffbbbb;
+		margin: 8px 0;
+		/* padding: 4px 8px; */
+		border-radius: 4px;
+	}
+	#freq {
+		width: 16px;
+		height: 16px;
+		background: #e77b7b;
+		border-radius: 50%;
+		position: fixed;
+		bottom: 8px;
+	}
+</style>
