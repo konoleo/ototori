@@ -7,25 +7,35 @@
 	<script src="https://unpkg.com/picoaudio/dist/browser/PicoAudio.js" defer></script>
 	<!-- <script src="voice.js" defer></script>
 	<script src="midi.js" defer></script> -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="script.js" defer></script>
 	<link rel="stylesheet" media="all" href="index.min.css">
 </head>
 <body>
-	<div id="inputDiv">
-		<h2>MIDIファイルをアップロードしてください</h2>
-		<label>
-			ファイルを選択
-			<input type="file" id="inputMidi" class="hidden" accept="audio/midi">
-		</label>
+<div>
+	<header>
+		<h1>音取り</h1>
+	</header>
+	<div id="fileDiv">
+		<div>
+			<h2>MIDIファイルをアップロードしてください</h2>
+			<label id="fileLabel" class="button">
+				ファイルを選択
+				<input type="file" id="inputMidi" class="hidden" accept="audio/midi">
+			</label>
+		</div>
 	</div>
 	<main hidden>
 		<div id="pianorollParent">
-			<div id="piano"></div>
-			<div id="pianoroll"></div>
 			<hr id="singBorder">
+			<div id="pianoroll"></div>
 		</div>
-		<button id="controler" data-playing="false" data-first>再生</button>
-		<button onclick="location.reload()">別の曲を練習する</button>
 	</main>
+	<footer id="controlers">
+		<button id="playPause" title="再生" class="nobg material-icons" data-playing="false" data-first>play_arrow</button>
+		<button id="skipPrevious" title="最初まで戻る" class="nobg material-icons">skip_previous</button>
+		<button id="replay5" title="5秒戻る" class="nobg material-icons">replay_5</button>
+	</footer>
+</div>
 </body>
 </html>

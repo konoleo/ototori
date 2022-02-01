@@ -1,46 +1,58 @@
 @import "tag";
 
-#inputDiv {
-	width: 100vw;
-	height: calc(100vh - 120px);
-	margin-top: 120px;
-	text-align: center;
-	label {
-		// buttonを継承
-		background: rgb(185, 185, 185);
-		text-align: center;
-		padding: 20px 18px;
-		border-radius: 6px;
+#fileDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	&[hidden] {
+		display: none;
 	}
+	& > div {
+		width: $mainWidth;
+		text-align: center;
+		#fileLabel {
+			display: inline-block;
+		}
+	}
+}
+#fileLabel {
+	display: inline-block;
+}
+
+main {
+	padding: 120px 0 16px;
+	background: darken($themeColor, 40%);
 }
 
 #pianorollParent {
 	overflow: hidden;
 	position: relative;
+	margin-bottom: 32px;
 	#pianoroll {
 		position: relative;
 		overflow: hidden;
 		height: 300px;
-		margin-left: min(200px, 30vw);
+		margin-left: 50%;
+		// background: repeating-linear-gradient(0deg, transparent, transparent 13px, lightgray 13px, lightgray 14px);
 	}
 	#singBorder {
 		position: absolute;
 		top: 0;
-		left: min(200px, 30vw);
-		width: 3px;
+		left: 50%;
+		width: 2px;
 		height: 100%;
-		background: #000;
+		background: lighten($themeColor, 50%);
 		border: none;
+		margin: 0;
 	}
 }
 
 .note {
 	position: absolute;
-	background: #000;
+	background: $themeColor;
 	height: 7px;
-	&.hide {
-		display: none;
-	}
+	box-shadow: 0 4px 4px rgba(black, .1);
 	&.voice {
 		background: red;
 	}
