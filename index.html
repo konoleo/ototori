@@ -5,37 +5,51 @@
 	<title>音取り</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<script src="https://unpkg.com/picoaudio/dist/browser/PicoAudio.js" defer></script>
-	<!-- <script src="voice.js" defer></script>
-	<script src="midi.js" defer></script> -->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- <script src="https://cdn.jsdelivr.net/npm/pico-audio-js@1.0.0/dist/nodejs/pico-audio.min.js"></script> -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 	<script src="script.js" defer></script>
 	<link rel="stylesheet" media="all" href="index.min.css">
 </head>
 <body>
 <div>
-	<header>
-		<h1>音取り</h1>
-	</header>
 	<div id="fileDiv">
-		<div>
-			<h2>MIDIファイルをアップロードしてください</h2>
-			<label id="fileLabel" class="button">
-				ファイルを選択
-				<input type="file" id="inputMidi" class="hidden" accept="audio/midi">
-			</label>
-		</div>
+		<h1>音取り</h1>
+		<h2>MIDIファイルをアップロードしてください</h2>
+		<label id="fileLabel">
+			ファイルを選択
+			<input type="file" id="inputMidi" accept="audio/midi">
+		</label>
 	</div>
 	<main hidden>
 		<div id="pianorollParent">
 			<hr id="singBorder">
 			<div id="pianoroll"></div>
 		</div>
+		<div id="lyrics">
+			<span>握りしめた手の中</span>
+			<span>小さな夢</span>
+		</div>
+		<div id="dynamicSigns">
+			<span class="sign">mp</span>
+			<span class="arrow material-icons-round">arrow_right_alt</span>
+			<span class="sign">mp</span>
+		</div>
+		<div id="controlers">
+			<div id="timeBarDiv">
+				<input type="range" id="timeBar" min="0" step="1" value="0">
+				<div id="coloredLine"></div>
+			</div>
+			<button id="skipPrevious" title="最初まで戻る" class="nobg material-icons-round">skip_previous</button>
+			<button id="replay5" title="5秒戻る" class="nobg material-icons-round">replay_5</button>
+			<button id="playPause" title="再生" class="nobg material-icons-round" data-playing="false" data-first>play_arrow</button>
+			<button id="forward5" title="5秒進む" class="nobg material-icons-round">forward_5</button>
+			<div id="timeDiv">
+				<span id="current">0:00</span>
+				<span id="separator">/</span>
+				<span id="length"></span>
+			</div>
+		</div>
 	</main>
-	<footer id="controlers">
-		<button id="playPause" title="再生" class="nobg material-icons" data-playing="false" data-first>play_arrow</button>
-		<button id="skipPrevious" title="最初まで戻る" class="nobg material-icons">skip_previous</button>
-		<button id="replay5" title="5秒戻る" class="nobg material-icons">replay_5</button>
-	</footer>
 </div>
 </body>
 </html>

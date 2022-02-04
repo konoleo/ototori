@@ -1,0 +1,20 @@
+// 色
+:root {
+	@media (prefers-color-scheme: light) {
+		--textColor: #333;
+	}
+	@media (prefers-color-scheme: dark) {
+		--textColor: #ebeff1;
+	}
+}
+$themeColor: #00a3ed;
+$lightBg: white;
+$darkBg: #17191a;
+$textColor: var(--textColor);
+$lightGray1: #eee;
+$lightGray2: darken($lightGray1, 5%);
+$darkGray: darken($lightGray1, 70%);
+
+// フォント
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+$sansSerif: "Noto Sans JP", sans-serif;
