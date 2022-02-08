@@ -71,7 +71,7 @@ main {
 header {
 	display: flex;
 	justify-content: space-between;
-	padding: 17px 26px 15px 28px;
+	padding: 16px 26px 16px 28px;
 	@media (min-width: 400px) {
 		padding-left: 40px;
 		padding-right: 40px;
@@ -81,7 +81,7 @@ header {
 	#title {
 		margin: 0;
 		font-size: 1.2rem;
-		line-height: 32px;
+		line-height: 32px - 2px;
 	}
 	.fileLabel {
 		padding: 5px 10px 7px;

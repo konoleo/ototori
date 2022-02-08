@@ -26,7 +26,6 @@ const forward5 = document.getElementById("forward5");
 var chorusNum;
 var lyricsData;
 var dynamicsData;
-// シオン = 1;
 var scrollAnime;
 var tempos;
 var songLengthTimig;
