@@ -41,42 +41,66 @@ button {
 	& > * {
 		height: max-content;
 	}
-	#fileLabel {
-		color: white;
-		text-align: center;
-		padding: 12px 18px 14px;
-		background: $themeColor;
-		border: none;
-		border-radius: 6px;
-		cursor: pointer;
-		#inputMidi {
-			position: absolute;
-			width: 1px;
-			height: 1px;
-			margin: -1px;
-			border: 0;
-			overflow: hidden;
-			padding: 0;
-			clip: rect(0, 0, 0, 0);
-		}
+}
+.fileLabel {
+	color: white;
+	text-align: center;
+	padding: 12px 18px 14px;
+	background: $themeColor;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	.inputMidi {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		border: 0;
+		overflow: hidden;
+		padding: 0;
+		clip: rect(0, 0, 0, 0);
 	}
 }
 
 main {
 	display: grid;
-	grid-template-rows: minmax(300px, 1fr) 120px 100px max-content;
+	grid-template-rows: 64px minmax(300px, 1fr) 106px 84px max-content;
 	height: 100vh;
 }
 
+header {
+	display: flex;
+	justify-content: space-between;
+	padding: 17px 26px 15px 28px;
+	@media (min-width: 400px) {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	@media (prefers-color-scheme: light) {box-shadow: 0 0 8px rgba(black, .1);}
+	@media (prefers-color-scheme: dark) {background: lighten($darkBg, 5%);}
+	#title {
+		margin: 0;
+		font-size: 1.2rem;
+		line-height: 32px;
+	}
+	.fileLabel {
+		padding: 5px 10px 7px;
+		font-size: 0.9rem;
+		line-height: 32px - 5px - 7px + 1px;
+		@media (prefers-color-scheme: light) {background: $lightGray; color: $textColor;}
+		@media (prefers-color-scheme: dark) {background: $darkGray;}
+	}
+}
+
+// ピアノロール
 #pianorollParent {
 	overflow: hidden;
 	position: relative;
-	margin: 20px 0;
+	margin: 24px 0 8px;
 	#pianoroll {
 		overflow: hidden;
 		height: 100%;
 		margin-left: 50%;
-		// background: repeating-linear-gradient(0deg, transparent, transparent 13px, lightGray2 13px, lightGray2 14px);
 	}
 	#singBorder {
 		position: absolute;
@@ -87,10 +111,11 @@ main {
 		border: none;
 		border-radius: 2px;
 		margin: 0;
-		@media (prefers-color-scheme: light) {background: $lightGray2;}
+		@media (prefers-color-scheme: light) {background: $lightGray;}
 		@media (prefers-color-scheme: dark) {background: $darkGray;}
 	}
 }
+
 .note {
 	position: absolute;
 	background: $themeColor;
@@ -103,26 +128,64 @@ main {
 	}
 }
 
-#lyrics, #dynamicSigns {
-	text-align: center;
-	padding: 16px 40px 20px;
+.breath {
+	position: absolute;
+	top: -0.9rem;
+	font-family: "BravuraText";
+	font-size: 2.5rem;
+	line-height: 1;
 }
+
+
+// 歌詞・強弱
+#lyrics, #dynamics {
+	text-align: center;
+}
+
 #lyrics {
-	font-size: 1.5rem;
-	border-bottom: 1px solid $textColor;
-	padding-top: 8px;
+	display: grid;
+	place-items: center;
+	font-size: 1.4rem;
+	@media (max-width: 340px) {
+		font-size: 1.2rem;
+	}
+	border-bottom: 2px solid;
+	@media (prefers-color-scheme: light) {
+		color: darken($lightGray, 15%);
+		border-color: darken($lightGray, 15%);
+	}
+	@media (prefers-color-scheme: dark) {
+		color: lighten($darkGray, 15%);
+		border-color: lighten($darkGray, 15%);
+	}
+	padding-bottom: 18px;
+	padding: 6px 40px 18px;
 	span {
 		display: block;
-	}
-}
-#dynamicSigns {
-	font-size: 2rem;
-	.arrow {
-		margin: 0 0.5em;
-		vertical-align: -0.1rem;
+		&.active {
+			color: $textColor;
+		}
 	}
 }
 
+#dynamics {
+	font-size: 1.8rem;
+	font-family: "BravuraText";
+	margin-top: -3px;
+	padding: 16px 40px;
+	// margin-bottom: -2px;
+	.arrow {
+		margin: 0 0.5em 0 0.3em;
+		vertical-align: -0.1rem;
+		&.material-icons-round {
+			vertical-align: -0.3rem;
+			font-family: "Material Icons Round";
+		}
+	}
+}
+
+
+// コントローラー
 #controlers {
 	width: 100vw;
 	padding: 28px 40px 20px;
@@ -151,7 +214,7 @@ main {
 			margin: auto 0;
 			border-radius: 4px;
 			cursor: pointer;
-			@media (prefers-color-scheme: light) {background: $lightGray1;}
+			@media (prefers-color-scheme: light) {background: $lightGray;}
 			@media (prefers-color-scheme: dark) {background: $darkGray;}
 			&::-webkit-slider-thumb {
 				-webkit-appearance: none;
@@ -208,7 +271,7 @@ main {
 }
 
 @media (max-width: 355px) {
-	#lyrics, #dynamicSigns, #controlers {
+	#lyrics, #dynamics, #controlers {
 		padding-left: 20px;
 		padding-right: 20px;
 	}

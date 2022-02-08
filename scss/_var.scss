@@ -11,10 +11,14 @@ $themeColor: #00a3ed;
 $lightBg: white;
 $darkBg: #17191a;
 $textColor: var(--textColor);
-$lightGray1: #eee;
-$lightGray2: darken($lightGray1, 5%);
-$darkGray: darken($lightGray1, 70%);
+$lightGray: #d8dcdd;
+$darkGray: darken($lightGray, 65%);
 
 // フォント
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 $sansSerif: "Noto Sans JP", sans-serif;
+
+@font-face {
+	font-family: "BravuraText";
+	src: url(../BravuraText.woff2);
+}

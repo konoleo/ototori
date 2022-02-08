@@ -14,25 +14,35 @@
 <div>
 	<div id="fileDiv">
 		<h1>音取り</h1>
-		<h2>MIDIファイルをアップロードしてください</h2>
-		<label id="fileLabel">
+		<h2>クラスルームでダウンロードしたファイルをアップロードしてください</h2>
+		<label class="fileLabel">
 			ファイルを選択
-			<input type="file" id="inputMidi" accept="audio/midi">
+			<input type="file" class="inputMidi" accept="application/json">
 		</label>
+		<!-- <span style="font-family: 'BravuraText'; font-size: 10rem;">
+			&#xE676;&#xE4D0;&#xE677;
+		</span> -->
 	</div>
 	<main hidden>
+		<header>
+			<h2 id="title"></h2>
+			<label class="fileLabel">
+				別の曲
+				<input type="file" class="inputMidi" accept="application/json">
+			</label>
+		</header>
 		<div id="pianorollParent">
 			<hr id="singBorder">
 			<div id="pianoroll"></div>
 		</div>
 		<div id="lyrics">
-			<span>aaaaaaaa</span>
-			<span>aaaaaaaa</span>
+			<span></span>
+			<span></span>
 		</div>
-		<div id="dynamicSigns">
-			<span class="sign">mp</span>
-			<span class="arrow material-icons-round">arrow_right_alt</span>
-			<span class="sign">mp</span>
+		<div id="dynamics">
+			<span class="sign"></span>
+			<span class="arrow"></span>
+			<span class="sign"></span>
 		</div>
 		<div id="controlers">
 			<div id="timeBarDiv">
