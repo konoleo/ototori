@@ -3,7 +3,7 @@ const picoAudio = new PicoAudio();
 // ファイルアップロード
 const fileDiv = document.getElementById("fileDiv");
 const fileLabel = document.getElementsByClassName("fileLabel");
-const fileInputE = document.getElementsByClassName("inputMidi");
+const fileInputE = document.getElementsByClassName("inputJson");
 
 // メイン
 const main = document.getElementsByTagName("main")[0];
@@ -25,7 +25,7 @@ const forward5 = document.getElementById("forward5");
 // 変数
 var chorusNum;
 var lyricsData;
-var dynamicsData;
+// var dynamicsData;
 var scrollAnime;
 var tempos;
 var songLengthTimig;
@@ -49,8 +49,8 @@ function readFile(e) {
 		// jsonの中身を変数にセット
 		chorusNum = json.chorusChannel;
 		lyricsData = json.lyrics;
-		dynamicsData = json.dynamics;
-		const breathData = json.breath;
+		// dynamicsData = json.dynamics;
+		// const breathData = json.breath;
 		// データセット
 		picoAudio.setData(smfData);
 		songLengthTimig = smfData.songLength;
@@ -75,17 +75,17 @@ function readFile(e) {
 			pianoRoll.appendChild(newNote);
 		});
 		// ブレス
-		breathData.forEach(data => {
-			const newDiv = document.createElement("div");
-			newDiv.classList.add("breath");
-			newDiv.style.left = data.timing / 7 + "px";
-			if (data.parentheses) {
-				newDiv.innerHTML = "&#xE676;&#xE4D0;&#xE677;";
-			} else {
-				newDiv.innerHTML = "&#xE4D0;";
-			}
-			pianoRoll.appendChild(newDiv);
-		});
+		// breathData.forEach(data => {
+		// 	const newDiv = document.createElement("div");
+		// 	newDiv.classList.add("breath");
+		// 	newDiv.style.left = data.timing / 7 + "px";
+		// 	if (data.parentheses) {
+		// 		newDiv.innerHTML = "&#xE676;&#xE4D0;&#xE677;";
+		// 	} else {
+		// 		newDiv.innerHTML = "&#xE4D0;";
+		// 	}
+		// 	pianoRoll.appendChild(newDiv);
+		// });
 		// スクロール設定
 		let keyframes = [{
 			transform: "translateX(0)",
@@ -154,35 +154,35 @@ function displayLyricsSigns(timing) {
 		}
 	}
 	// 強弱記号
-	const dynamicsIndex = getBiggerClosestNum(currentTiming, dynamicsData.map(elem => elem.endTiming));
-	const signs = dynamicsE.querySelectorAll(".sign");
-	const arrow = dynamicsE.querySelector(".arrow");
-	if (dynamicsData[dynamicsIndex - 1] && dynamicsData[dynamicsIndex - 1].endTiming <= currentTiming && currentTiming <= dynamicsData[dynamicsIndex].startTiming) {
-		const dynamicsNums = [];
-		signs.forEach((elem, i) => {
-			const unicodeData = dynamicsToUnicode[dynamicsData[dynamicsIndex + i - 1].dynamicSign];
-			elem.innerHTML = unicodeData.unicode;
-			dynamicsNums.push(unicodeData.num);
-		});
-		if (dynamicsData[dynamicsIndex - 1].gradually === false) {
-			arrow.textContent = "arrow_right_alt";
-			arrow.classList.add("material-icons-round");
-		} else {
-			arrow.innerHTML = dynamicsToUnicode[Math.sign(dynamicsNums[1] - dynamicsNums[0]) === 1 ? "cresc" : "decresc"];
-			arrow.classList.remove("material-icons-round");
-		}
-		[arrow, ...signs].forEach(elem => {
-			elem.removeAttribute("hidden");
-		});
-	} else if (dynamicsIndex !== -1) {
-		signs[0].innerHTML = dynamicsToUnicode[dynamicsData[dynamicsIndex].dynamicSign].unicode;
-		signs[0].removeAttribute("hidden");
-		[arrow, signs[1]].forEach(elem => {
-			elem.setAttribute("hidden", "");
-		});
-	} else {
-		signs[0].setAttribute("hidden", "");
-	}
+	// const dynamicsIndex = getBiggerClosestNum(currentTiming, dynamicsData.map(elem => elem.endTiming));
+	// const signs = dynamicsE.querySelectorAll(".sign");
+	// const arrow = dynamicsE.querySelector(".arrow");
+	// if (dynamicsData[dynamicsIndex - 1] && dynamicsData[dynamicsIndex - 1].endTiming <= currentTiming && currentTiming <= dynamicsData[dynamicsIndex].startTiming) {
+	// 	const dynamicsNums = [];
+	// 	signs.forEach((elem, i) => {
+	// 		const unicodeData = dynamicsToUnicode[dynamicsData[dynamicsIndex + i - 1].dynamicSign];
+	// 		elem.innerHTML = unicodeData.unicode;
+	// 		dynamicsNums.push(unicodeData.num);
+	// 	});
+	// 	if (dynamicsData[dynamicsIndex - 1].gradually === false) {
+	// 		arrow.textContent = "arrow_right_alt";
+	// 		arrow.classList.add("material-icons-round");
+	// 	} else {
+	// 		arrow.innerHTML = dynamicsToUnicode[Math.sign(dynamicsNums[1] - dynamicsNums[0]) === 1 ? "cresc" : "decresc"];
+	// 		arrow.classList.remove("material-icons-round");
+	// 	}
+	// 	[arrow, ...signs].forEach(elem => {
+	// 		elem.removeAttribute("hidden");
+	// 	});
+	// } else if (dynamicsIndex !== -1) {
+	// 	signs[0].innerHTML = dynamicsToUnicode[dynamicsData[dynamicsIndex].dynamicSign].unicode;
+	// 	signs[0].removeAttribute("hidden");
+	// 	[arrow, signs[1]].forEach(elem => {
+	// 		elem.setAttribute("hidden", "");
+	// 	});
+	// } else {
+	// 	signs[0].setAttribute("hidden", "");
+	// }
 }
 function getBiggerClosestNum(num, arr) {
 	num = Number(num);
@@ -414,15 +414,14 @@ picoAudio.addEventListener("songEnd", () => {
 		clearTimeout(timer);
 	});
 }());
-
-// PicoAudio.js 再生時間の取得
-function getCurrentTime() {
-	return (picoAudio.context ? picoAudio.context.currentTime : 0) - picoAudio.states.startTime;
-}
-
 function getClosestNum(num, arr) {
 	num = Number(num);
 	return arr.reduce((prev, curr) => {
 		return (Math.abs(curr - num) < Math.abs(prev - num) ? curr : prev);
 	});
+}
+
+// PicoAudio.js 再生時間の取得
+function getCurrentTime() {
+	return (picoAudio.context ? picoAudio.context.currentTime : 0) - picoAudio.states.startTime;
 }

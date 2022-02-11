@@ -5,9 +5,8 @@
 	<title>音取り</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<script src="https://unpkg.com/picoaudio/dist/browser/PicoAudio.min.js" defer></script>
-	<!-- <script src="https://cdn.jsdelivr.net/npm/pico-audio-js@1.0.0/dist/nodejs/pico-audio.min.js"></script> -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-	<script src="script.js" defer></script>
+	<script src="script.min.js" defer></script>
 	<link rel="stylesheet" media="all" href="index.min.css">
 </head>
 <body>
@@ -17,7 +16,7 @@
 		<h2>クラスルームでダウンロードしたファイルをアップロードしてください</h2>
 		<label class="fileLabel">
 			ファイルを選択
-			<input type="file" class="inputMidi" accept="application/json">
+			<input type="file" class="inputJson" accept="application/json">
 		</label>
 	</div>
 	<main hidden>
@@ -25,7 +24,7 @@
 			<h2 id="title"></h2>
 			<label class="fileLabel">
 				別の曲
-				<input type="file" class="inputMidi" accept="application/json">
+				<input type="file" class="inputJson" accept="application/json">
 			</label>
 		</header>
 		<div id="pianorollParent">
@@ -36,11 +35,11 @@
 			<span></span>
 			<span></span>
 		</div>
-		<div id="dynamics">
+		<!-- <div id="dynamics">
 			<span class="sign"></span>
 			<span class="arrow"></span>
 			<span class="sign"></span>
-		</div>
+		</div> -->
 		<div id="controlers">
 			<div id="timeBarDiv">
 				<input type="range" id="timeBar" min="0" step="1" value="0">
