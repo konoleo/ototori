@@ -1,529 +1,353 @@
 {
 	"27.500": {
-		"japanese": "ラ",
-		"international": "A0",
 		"frequency": 27.500,
 		"midinote": 21
 	},
 	"29.135": {
-		"japanese": "ラ♯/シ♭",
-		"international": "A#0",
 		"frequency": 29.135,
 		"midinote": 22
 	},
 	"30.868": {
-		"japanese": "シ",
-		"international": "B0",
 		"frequency": 30.868,
 		"midinote": 23
 	},
 	"32.703": {
-		"japanese": "ド",
-		"international": "C1",
 		"frequency": 32.703,
 		"midinote": 24
 	},
 	"34.648": {
-		"japanese": "ド♯/レ♭",
-		"international": "C#1",
 		"frequency": 34.648,
 		"midinote": 25
 	},
 	"36.708": {
-		"japanese": "レ",
-		"international": "D1",
 		"frequency": 36.708,
 		"midinote": 26
 	},
 	"38.891": {
-		"japanese": "レ♯/ミ♭",
-		"international": "D#1",
 		"frequency": 38.891,
 		"midinote": 27
 	},
 	"41.203": {
-		"japanese": "ミ",
-		"international": "E1",
 		"frequency": 41.203,
 		"midinote": 28
 	},
 	"43.654": {
-		"japanese": "ファ",
-		"international": "F1",
 		"frequency": 43.654,
 		"midinote": 29
 	},
 	"46.249": {
-		"japanese": "ファ♯/ソ♭",
-		"international": "F#1",
 		"frequency": 46.249,
 		"midinote": 30
 	},
 	"48.999": {
-		"japanese": "ソ",
-		"international": "G1",
 		"frequency": 48.999,
 		"midinote": 31
 	},
 	"51.913": {
-		"japanese": "ソ♯/ラ♭",
-		"international": "G#1",
 		"frequency": 51.913,
 		"midinote": 32
 	},
 	"55.000": {
-		"japanese": "ラ",
-		"international": "A1",
 		"frequency": 55.000,
 		"midinote": 33
 	},
 	"58.270": {
-		"japanese": "ラ♯/シ♭",
-		"international": "A#1",
 		"frequency": 58.270,
 		"midinote": 34
 	},
 	"61.735": {
-		"japanese": "シ",
-		"international": "B1",
 		"frequency": 61.735,
 		"midinote": 35
 	},
 	"65.406": {
-		"japanese": "ド",
-		"international": "C2",
 		"frequency": 65.406,
 		"midinote": 36
 	},
 	"69.296": {
-		"japanese": "ド♯/レ♭",
-		"international": "C#2",
 		"frequency": 69.296,
 		"midinote": 37
 	},
 	"73.416": {
-		"japanese": "レ",
-		"international": "D2",
 		"frequency": 73.416,
 		"midinote": 38
 	},
 	"77.782": {
-		"japanese": "レ♯/ミ♭",
-		"international": "D#2",
 		"frequency": 77.782,
 		"midinote": 39
 	},
 	"82.407": {
-		"japanese": "ミ",
-		"international": "E2",
 		"frequency": 82.407,
 		"midinote": 40
 	},
 	"87.307": {
-		"japanese": "ファ",
-		"international": "F2",
 		"frequency": 87.307,
 		"midinote": 41
 	},
 	"92.499": {
-		"japanese": "ファ♯/ソ♭",
-		"international": "F#2",
 		"frequency": 92.499,
 		"midinote": 42
 	},
 	"97.999": {
-		"japanese": "ソ",
-		"international": "G2",
 		"frequency": 97.999,
 		"midinote": 43
 	},
 	"103.826": {
-		"japanese": "ソ♯/ラ♭",
-		"international": "G#2",
 		"frequency": 103.826,
 		"midinote": 44
 	},
 	"110.000": {
-		"japanese": "ラ",
-		"international": "A2",
 		"frequency": 110.000,
 		"midinote": 45
 	},
 	"116.541": {
-		"japanese": "ラ♯/シ♭",
-		"international": "A#2",
 		"frequency": 116.541,
 		"midinote": 46
 	},
 	"123.471": {
-		"japanese": "シ",
-		"international": "B2",
 		"frequency": 123.471,
 		"midinote": 47
 	},
 	"130.813": {
-		"japanese": "ド",
-		"international": "C3",
 		"frequency": 130.813,
 		"midinote": 48
 	},
 	"138.591": {
-		"japanese": "ド♯/レ♭",
-		"international": "C#3",
 		"frequency": 138.591,
 		"midinote": 49
 	},
 	"146.832": {
-		"japanese": "レ",
-		"international": "D3",
 		"frequency": 146.832,
 		"midinote": 50
 	},
 	"155.563": {
-		"japanese": "レ♯/ミ♭",
-		"international": "D#3",
 		"frequency": 155.563,
 		"midinote": 51
 	},
 	"164.814": {
-		"japanese": "ミ",
-		"international": "E3",
 		"frequency": 164.814,
 		"midinote": 52
 	},
 	"174.614": {
-		"japanese": "ファ",
-		"international": "F3",
 		"frequency": 174.614,
 		"midinote": 53
 	},
 	"184.997": {
-		"japanese": "ファ♯/ソ♭",
-		"international": "F#3",
 		"frequency": 184.997,
 		"midinote": 54
 	},
 	"195.998": {
-		"japanese": "ソ",
-		"international": "G3",
 		"frequency": 195.998,
 		"midinote": 55
 	},
 	"207.652": {
-		"japanese": "ソ♯/ラ♭",
-		"international": "G#3",
 		"frequency": 207.652,
 		"midinote": 56
 	},
 	"220.000": {
-		"japanese": "ラ",
-		"international": "A3",
 		"frequency": 220.000,
 		"midinote": 57
 	},
 	"233.082": {
-		"japanese": "ラ♯/シ♭",
-		"international": "A#3",
 		"frequency": 233.082,
 		"midinote": 58
 	},
 	"246.942": {
-		"japanese": "シ",
-		"international": "B3",
 		"frequency": 246.942,
 		"midinote": 59
 	},
 	"261.626": {
-		"japanese": "ド",
-		"international": "C4",
 		"frequency": 261.626,
 		"midinote": 60
 	},
 	"277.183": {
-		"japanese": "ド♯/レ♭",
-		"international": "C#4",
 		"frequency": 277.183,
 		"midinote": 61
 	},
 	"293.665": {
-		"japanese": "レ",
-		"international": "D4",
 		"frequency": 293.665,
 		"midinote": 62
 	},
 	"311.127": {
-		"japanese": "レ♯/ミ♭",
-		"international": "D#4",
 		"frequency": 311.127,
 		"midinote": 63
 	},
 	"329.628": {
-		"japanese": "ミ",
-		"international": "E4",
 		"frequency": 329.628,
 		"midinote": 64
 	},
 	"349.228": {
-		"japanese": "ファ",
-		"international": "F4",
 		"frequency": 349.228,
 		"midinote": 65
 	},
 	"369.994": {
-		"japanese": "ファ♯/ソ♭",
-		"international": "F#4",
 		"frequency": 369.994,
 		"midinote": 66
 	},
 	"391.995": {
-		"japanese": "ソ",
-		"international": "G4",
 		"frequency": 391.995,
 		"midinote": 67
 	},
 	"415.305": {
-		"japanese": "ソ♯/ラ♭",
-		"international": "G#4",
 		"frequency": 415.305,
 		"midinote": 68
 	},
 	"440.000": {
-		"japanese": "ラ",
-		"international": "A4",
 		"frequency": 440.000,
 		"midinote": 69
 	},
 	"466.164": {
-		"japanese": "ラ♯/シ♭",
-		"international": "A#4",
 		"frequency": 466.164,
 		"midinote": 70
 	},
 	"493.883": {
-		"japanese": "シ",
-		"international": "B4",
 		"frequency": 493.883,
 		"midinote": 71
 	},
 	"523.251": {
-		"japanese": "ド",
-		"international": "C5",
 		"frequency": 523.251,
 		"midinote": 72
 	},
 	"554.365": {
-		"japanese": "ド♯/レ♭",
-		"international": "C#5",
 		"frequency": 554.365,
 		"midinote": 73
 	},
 	"587.330": {
-		"japanese": "レ",
-		"international": "D5",
 		"frequency": 587.330,
 		"midinote": 74
 	},
 	"622.254": {
-		"japanese": "レ♯/ミ♭",
-		"international": "D#5",
 		"frequency": 622.254,
 		"midinote": 75
 	},
 	"659.255": {
-		"japanese": "ミ",
-		"international": "E5",
 		"frequency": 659.255,
 		"midinote": 76
 	},
 	"698.456": {
-		"japanese": "ファ",
-		"international": "F5",
 		"frequency": 698.456,
 		"midinote": 77
 	},
 	"739.989": {
-		"japanese": "ファ♯/ソ♭",
-		"international": "F#5",
 		"frequency": 739.989,
 		"midinote": 78
 	},
 	"783.991": {
-		"japanese": "ソ",
-		"international": "G5",
 		"frequency": 783.991,
 		"midinote": 79
 	},
 	"830.609": {
-		"japanese": "ソ♯/ラ♭",
-		"international": "G#5",
 		"frequency": 830.609,
 		"midinote": 80
 	},
 	"880.000": {
-		"japanese": "ラ",
-		"international": "A5",
 		"frequency": 880.000,
 		"midinote": 81
 	},
 	"932.328": {
-		"japanese": "ラ♯/シ♭",
-		"international": "A#5",
 		"frequency": 932.328,
 		"midinote": 82
 	},
 	"987.767": {
-		"japanese": "シ",
-		"international": "B5",
 		"frequency": 987.767,
 		"midinote": 83
 	},
 	"1046.502": {
-		"japanese": "ド",
-		"international": "C6",
 		"frequency": 1046.502,
 		"midinote": 84
 	},
 	"1108.731": {
-		"japanese": "ド♯/レ♭",
-		"international": "C#6",
 		"frequency": 1108.731,
 		"midinote": 85
 	},
 	"1174.659": {
-		"japanese": "レ",
-		"international": "D6",
 		"frequency": 1174.659,
 		"midinote": 86
 	},
 	"1244.508": {
-		"japanese": "レ♯/ミ♭",
-		"international": "D#6",
 		"frequency": 1244.508,
 		"midinote": 87
 	},
 	"1318.510": {
-		"japanese": "ミ",
-		"international": "E6",
 		"frequency": 1318.510,
 		"midinote": 88
 	},
 	"1396.913": {
-		"japanese": "ファ",
-		"international": "F6",
 		"frequency": 1396.913,
 		"midinote": 89
 	},
 	"1479.978": {
-		"japanese": "ファ♯/ソ♭",
-		"international": "F#6",
 		"frequency": 1479.978,
 		"midinote": 90
 	},
 	"1567.982": {
-		"japanese": "ソ",
-		"international": "G6",
 		"frequency": 1567.982,
 		"midinote": 91
 	},
 	"1661.219": {
-		"japanese": "ソ♯/ラ♭",
-		"international": "G#6",
 		"frequency": 1661.219,
 		"midinote": 92
 	},
 	"1760.000": {
-		"japanese": "ラ",
-		"international": "A6",
 		"frequency": 1760.000,
 		"midinote": 93
 	},
 	"1864.655": {
-		"japanese": "ラ♯/シ♭",
-		"international": "A#6",
 		"frequency": 1864.655,
 		"midinote": 94
 	},
 	"1975.533": {
-		"japanese": "シ",
-		"international": "B6",
 		"frequency": 1975.533,
 		"midinote": 95
 	},
 	"2093.005": {
-		"japanese": "ド",
-		"international": "C7",
 		"frequency": 2093.005,
 		"midinote": 96
 	},
 	"2217.461": {
-		"japanese": "ド♯/レ♭",
-		"international": "C#7",
 		"frequency": 2217.461,
 		"midinote": 97
 	},
 	"2349.318": {
-		"japanese": "レ",
-		"international": "D7",
 		"frequency": 2349.318,
 		"midinote": 98
 	},
 	"2489.016": {
-		"japanese": "レ♯/ミ♭",
-		"international": "D#7",
 		"frequency": 2489.016,
 		"midinote": 99
 	},
 	"2637.020": {
-		"japanese": "ミ",
-		"international": "E7",
 		"frequency": 2637.020,
 		"midinote": 100
 	},
 	"2793.826": {
-		"japanese": "ファ",
-		"international": "F7",
 		"frequency": 2793.826,
 		"midinote": 101
 	},
 	"2959.955": {
-		"japanese": "ファ♯/ソ♭",
-		"international": "F#7",
 		"frequency": 2959.955,
 		"midinote": 102
 	},
 	"3135.963": {
-		"japanese": "ソ",
-		"international": "G7",
 		"frequency": 3135.963,
 		"midinote": 103
 	},
 	"3322.438": {
-		"japanese": "ソ♯/ラ♭",
-		"international": "G#7",
 		"frequency": 3322.438,
 		"midinote": 104
 	},
 	"3520.000": {
-		"japanese": "ラ",
-		"international": "A7",
 		"frequency": 3520.000,
 		"midinote": 105
 	},
 	"3729.310": {
-		"japanese": "ラ♯/シ♭",
-		"international": "A#7",
 		"frequency": 3729.310,
 		"midinote": 106
 	},
 	"3951.066": {
-		"japanese": "シ",
-		"international": "B7",
 		"frequency": 3951.066,
 		"midinote": 107
 	},
 	"4186.009": {
-		"japanese": "ド",
-		"international": "C8",
 		"frequency": 4186.009,
 		"midinote": 108
 	}

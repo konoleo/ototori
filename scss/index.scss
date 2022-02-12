@@ -225,6 +225,16 @@ header {
 			cursor: pointer;
 			@media (prefers-color-scheme: light) {background: $lightGray;}
 			@media (prefers-color-scheme: dark) {background: $darkGray;}
+			&::-moz-range-thumb {
+				-webkit-appearance: none;
+				appearance: none;
+				width: 16px;
+				height: 16px;
+				display: block;
+				background-color: $themeColor;
+				border-radius: 50%;
+				border: none;
+			}
 			&::-webkit-slider-thumb {
 				-webkit-appearance: none;
 				appearance: none;
@@ -233,6 +243,7 @@ header {
 				display: block;
 				background-color: $themeColor;
 				border-radius: 50%;
+				border: none;
 			}
 		}
 		#coloredLine {

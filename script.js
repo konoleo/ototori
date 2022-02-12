@@ -359,7 +359,7 @@ picoAudio.addEventListener("songEnd", () => {
 // 声をNoteに変換
 (async function () {
 	const freqList = await fetch("freqList.json").then(r => r.ok ? r.json() : Promise.reject(new Error(`${r.url}にアクセスできません。`)));
-	const stream = await navigator.mediaDevices.getUserMedia({audio: true});
+	const stream = await navigator.mediaDevices.getUserMedia({audio: {echoCancellation: false}});
 	const audioCtx = new AudioContext({sampleRate: 44100});
 	const analyser = audioCtx.createAnalyser();
 	analyser.fftSize = 16384;
